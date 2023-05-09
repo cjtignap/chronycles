@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Chronycles</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Lora.css">
     <link rel="stylesheet" href="/css/Open%20Sans.css">
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="/css/Login-Form-Basic-icons.css">
+    <link rel="icon" type="image/png" href="/img/chronycles.png">
 </head>
 
 <body>

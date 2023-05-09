@@ -33,7 +33,7 @@
                 @endif
                 <br />
 
-                @if($blog['username']==auth()->user()->username)
+                @if($blog->showControls==true)
                 <button class="btn btn-dark btn-sm" type="submit" style="font-size: 12px;padding: 8px 25px;margin-top: 8px;text-align: justify;" 
                     onclick="location.href='{{$blog->id."/edit"}}';">EDIT
                 </button>

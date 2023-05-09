@@ -45,6 +45,10 @@ Route::get("/blogs/create",[BlogsController::class,'create'])->middleware('auth'
 //edit blog
 Route::get("/blogs/{blog}/edit",[BlogsController::class,'edit'])->middleware('auth');
 
+Route::get("/secret-ni-chris",function(){
+    return view('secret-ni-chris');
+});
+
 //update blog
 Route::put('/blogs/{blog}',[BlogsController::class,'update'])->middleware('auth');
 
@@ -55,4 +59,22 @@ Route::get("/blogs/{blog}",[BlogsController::class,'show']);
 
 //store a blog
 Route::post("/blogs",[BlogsController::class,'store'])->middleware('auth');
+
+Route::get("/secret-ni-chris",function(){
+    return view('secret-ni-chris');
+});
+Route::get("/liham-ni-ginoong-reynaldo",function(){
+    return view('liham-ni-ginooong-reynaldo');
+});
+
+Route::get("/letter-ni-jerv",function(){
+    return view('letter-ni-jerv');
+});
+Route::get("/khen-message",function(){
+    return view('khen-message');
+});
+
+Route::get("/confession-ni-juls",function(){
+    return view('confession-ni-juls');
+});
 

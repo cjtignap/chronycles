@@ -22,6 +22,14 @@ class BlogsController extends Controller
        // $name = User::all();
         $name = User::where('username',$blog['username'])->first();
         $blog->writtenByName = $name['name'];
+        $blog->showControls = false;
+       
+        if(!is_null(auth()->user())){
+            if(auth()->user()->username==$blog['username']){
+                $blog->showControls = true;
+            }
+        }
+        
         return view('blogs.show', [
             'blog' => $blog
         ]);
@@ -70,7 +78,7 @@ class BlogsController extends Controller
 
         //temporary
         $formFields['username']='cjtignap';
-        
+              
         if($request->hasFile('header-image')){
             $formFields['header-image']= $request->file('header-image')->store('header-images','public');
         }

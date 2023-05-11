@@ -22,7 +22,7 @@
                             @enderror
                             <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" value="{{old('password')}}"></div>
                             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Login</button></div>
-                            <p class="text-muted">Don't have account yet?</p>
+                            <p class="text-muted"><a href={{'\\register'}} style="all:unset;cursor:pointer">Don't have account yet?</a></p>
                         </form>
                     </div>
                 </div>

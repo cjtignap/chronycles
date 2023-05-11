@@ -17,40 +17,38 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="\">Chronycles</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="container"><a class="navbar-brand link-light" href="\">Chronycles</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars link-light"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 
                 <ul class="navbar-nav ms-auto">
-                    @auth
+
                     
-                <li class="nav-item"><a class="nav-link" >Welcome {{auth()->user()->name}}</a> </li>
-                
-                
-                    @endauth
-                    <li class="nav-item"><a class="nav-link" href="{{'\\'}}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{'\\about-us'}}">About us</a></li>
+                    <li class="nav-item link-light"><a class="nav-link link-light" href="{{'\\'}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link link-light"  href="{{'\\about-us'}}">About us</a></li>
 
                     @auth
-                    
-                    <li class="nav-item"><a class="nav-link" href="{{'\\blogs\create'}}" style="color: var(--bs-navbar-active-color);background: white;">write</a></li>
-                    <li class="nav-item"><a class="nav-link" href={{ request()->fullUrlWithQuery(['written-by' => auth()->user()->username]) }} ">Manage Blogs</a></li>
-                    <li class="nav-item">
 
-                        <form action="/logout" method="post">
-                        @csrf
-                            <button  class="btn btn-dark navbar-btn" style="padding:7px;" type="submit">
-                        
-                            LOGOUT
-                          </button>
-                        </form>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link link-light" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">OPTIONS </a>
+                        <div class="dropdown-menu text-white text-bg-dark" style="text-align: center;">
+                            <a class="btn btn-dark navbar-btn"  href="{{'\\blogs\create'}}" style="color: var(--bs-navbar-active-color);background: white;">WRITE</a>
+                            <a class="btn btn-dark navbar-btn" href={{ request()->fullUrlWithQuery(['written-by' => auth()->user()->username]) }} ">MANAGE BLOGS</a>
+                            <form action="/logout" method="post">
+                                @csrf
+                                    <button  class="btn btn-dark navbar-btn" style="padding:7px;" type="submit">
+                                    LOGOUT
+                                  </button>
+                                </form>
+                        </div>
                     </li>
+                    
+                    <li class="nav-item link-light"><a class="nav-link link-light">Welcome {{auth()->user()->name}}</a> </li>
                     <li class="nav-item"> <img class="avatar avatar-32 bg-light rounded-circle text-white"
 
                         src={{auth()->user()['profile-image']? asset('storage/'.auth()->user()['profile-image']):"https://raw.githubusercontent.com/twbs/icons/main/icons/person-fill.svg"}}>    
                     
                     </li>
                     @else
-                    <li class="nav-item"><a class="nav-link" href="{{'\\register'}}">REGISTER</a></li>
+                    <li class="nav-item"><a class="nav-link link-light" href="{{'\\register'}}">REGISTER</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{'\\login'}}" style="color: var(--bs-navbar-active-color);background: white;margin-right: 5px;">LOGIN</a></li>
                     @endauth
                 </ul>

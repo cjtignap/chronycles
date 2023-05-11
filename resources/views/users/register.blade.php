@@ -37,7 +37,7 @@
                             <input class="form-control form-control-sm" type="file" name="profile-image">
                             <br />
                             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">SIGN UP</button></div>
-                            <p class="text-muted"><a href="/login">Already have an account?</a></p>
+                            <p class="text-muted"><a href={{'\\login'}} style="all:unset;cursor:pointer">Already have an account?</a></p>
                         </form>
                     </div>
                 </div>

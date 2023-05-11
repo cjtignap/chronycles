@@ -24,6 +24,11 @@ class UserController extends Controller
         ]);
         //hash password
         $formFields['password']=bcrypt($formFields['password']);
+        
+        
+        if($request->hasFile('profile-image')){
+            $formFields['profile-image']= $request->file('profile-image')->store('profile-images','public');
+        }
 
         //create user
         $user = User::create($formFields);

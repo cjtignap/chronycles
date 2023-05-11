@@ -77,7 +77,7 @@ class BlogsController extends Controller
         ]);
 
         //temporary
-        $formFields['username']='cjtignap';
+        $formFields['username']=auth()->user()->username;
               
         if($request->hasFile('header-image')){
             $formFields['header-image']= $request->file('header-image')->store('header-images','public');

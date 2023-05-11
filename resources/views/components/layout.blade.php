@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="/css/Login-Form-Basic-icons.css">
     <link rel="icon" type="image/png" href="/img/chronycles.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-avatar@latest/dist/avatar.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -21,7 +23,9 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                     
-                <li class="nav-item"><a class="nav-link" >Welcome {{auth()->user()->name}}</a></li>
+                <li class="nav-item"><a class="nav-link" >Welcome {{auth()->user()->name}}</a> </li>
+                
+                
                     @endauth
                     <li class="nav-item"><a class="nav-link" href="{{'\\'}}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{'\\about-us'}}">About us</a></li>
@@ -39,6 +43,11 @@
                             LOGOUT
                           </button>
                         </form>
+                    </li>
+                    <li class="nav-item"> <img class="avatar avatar-32 bg-light rounded-circle text-white"
+
+                        src={{auth()->user()['profile-image']? asset('storage/'.auth()->user()['profile-image']):"https://raw.githubusercontent.com/twbs/icons/main/icons/person-fill.svg"}}>    
+                    
                     </li>
                     @else
                     <li class="nav-item"><a class="nav-link" href="{{'\\register'}}">REGISTER</a></li>
